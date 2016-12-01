@@ -1,0 +1,28 @@
+{
+    "name": "tinu",
+    "version": "1.0.0",
+    "description": "TINU - These Incredibly Naughty Units",
+    "main": "./lib/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+        "name": "Wanadev",
+        "url": "http://wanadev.fr/"
+    },
+    "maintainers": [{
+        "name": "clementlvsr",
+        "email": "clevasseur@wanadev.fr"
+    }, {
+        "name": "wanadev",
+        "email": "it@wanadev.fr"
+    }],
+    "license": "MIT",
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-browserify": "^5.0.0",
+        "grunt-contrib-clean": "^1.0.0",
+        "grunt-contrib-uglify": "^2.0.0",
+        "grunt-contrib-watch": "^1.0.0"
+    }
+}
