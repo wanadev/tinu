@@ -1,6 +1,6 @@
 {
     "name": "tinu",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "TINU - These Incredibly Naughty Units",
     "main": "./lib/index.js",
     "scripts": {
@@ -17,6 +17,19 @@
         "name": "wanadev",
         "email": "it@wanadev.fr"
     }],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wanadev/tinu"
+    },
+    "bugs": {
+        "url": "https://github.com/wanadev/tinu/issues"
+    },
+    "keywords": [
+        "unit",
+        "measure",
+        "convertor",
+        "convert"
+    ],
     "license": "MIT",
     "devDependencies": {
         "grunt": "^1.0.1",
