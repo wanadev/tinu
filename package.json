@@ -1,6 +1,6 @@
 {
   "name": "tinu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "TINU - These Incredibly Naughty Units",
   "main": "./lib/index.js",
   "scripts": {
