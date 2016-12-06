@@ -1,2 +1,9 @@
 build
 Gruntfile.js
+test
+.tern-project
+.jshintrc
+.editorconfig
+.travis.yml
+tinu-logo.svg
+tinu-logo.png
