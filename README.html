@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Tinu - tinu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        
+            <link type="text/css" rel="stylesheet" href="enlightme.css" />
+        
+    </head>
+
+    <body class=" page-with-nav">
+
+        <div class="page">
+
+            
+                <div id="toggle-mobile-menu" title="Toggle menu">☰</div>
+            
+
+            
+                <nav class="links">
+                    <ul>
+                        <li><a href="https://github.com/wanadev/tinu">Github</a></li><li><a href="https://www.npmjs.com/package/tinu">NPM</a></li>
+                    </ul>
+                </nav>
+            
+
+            <header>
+                <h1>
+                    
+                    <span>tinu</span>
+                </h1>
+            </header>
+
+            <div class="content">
+
+                
+                    <nav>
+                        
+                            
+
+    
+    <ul class="toc">
+        
+            <li>
+                <a href="#usage">Usage</a>
+                
+            </li>
+        
+            <li>
+                <a href="#getting-started">Getting Started</a>
+                
+            </li>
+        
+    </ul>
+
+
+
+                        
+                    </nav>
+                
+                <article>
+                    <h1 id="tinu-these-incredibly-naughty-units">TINU - These Incredibly Naughty Units</h1>
+<p><a href="http://badge.fury.io/js/tinu"><img src="https://badge.fury.io/js/tinu.png" alt="NPM version"></a>
+<a href="https://travis-ci.org/wanadev/tinu"><img src="https://travis-ci.org/wanadev/tinu.svg?branch=master" alt="Build Status"></a></p>
+<p>A toolkit to convert easily any units.</p>
+<h2 id="usage">Usage</h2>
+<p>Add the npm package <a href="https://www.npmjs.com/package/tinu">tinu</a> to your project:</p>
+<pre><code>npm install tinu --save
+</code></pre><p>or clone:</p>
+<pre><code>git clone git@github.com:wanadev/tinu.git
+</code></pre><h2 id="getting-started">Getting Started</h2>
+<p>Conversion function returns an object that contain the parsed and NORMALIZED value/unit AND some function described bellow :</p>
+<pre><code class="hljs javascript">Tinu.distance(<span class="hljs-number">12</span>);           <span class="hljs-comment">// → {value: 12, unit: "cm", ...}</span>
+Tinu.distance(<span class="hljs-number">12</span>, <span class="hljs-string">"mm"</span>);     <span class="hljs-comment">// → {value: 12, unit: "mm", ...}</span>
+Tinu.distance(<span class="hljs-number">12</span>, <span class="hljs-string">"in"</span>);     <span class="hljs-comment">// → {value: 12, unit: "in", ...}</span>
+Tinu.distance(<span class="hljs-string">"12m"</span>);        <span class="hljs-comment">// → {value: 12, unit: "m",  ...}</span>
+Tinu.distance(<span class="hljs-string">"12 m"</span>);       <span class="hljs-comment">// → {value: 12, unit: "m",  ...}</span>
+Tinu.distance(<span class="hljs-string">"12.00m"</span>);     <span class="hljs-comment">// → {value: 12, unit: "m",  ...}</span>
+
+Tinu.area(<span class="hljs-number">80</span>, <span class="hljs-string">"m2"</span>);         <span class="hljs-comment">// → {value: 80, unit: "m2", ...}</span></code></pre>
+
+<p>The .to() method converts to the same object but in the requested unit.</p>
+<pre><code class="hljs javascript">Tinu.distance(<span class="hljs-number">12</span>).to(<span class="hljs-string">"m"</span>);            <span class="hljs-comment">// → {value: 0.012, "m", ...}</span>
+Tinu.distance(<span class="hljs-number">12</span>).to(<span class="hljs-string">"m"</span>).to(<span class="hljs-string">"mm"</span>);   <span class="hljs-comment">// → {value: 120, "mm", ...}</span>
+Tinu.distance(<span class="hljs-number">12</span>).to();  <span class="hljs-comment">// → converts to the default target unit: {value: 0.012, "m", ...}</span></code></pre>
+
+<p>The .toNumber(unit=null) method converts to a Number in the requested unit</p>
+<pre><code class="hljs javascript">Tinu.distance(<span class="hljs-number">12</span>).toNumber(<span class="hljs-string">"m"</span>);  <span class="hljs-comment">// → 0.012</span>
+Tinu.distance(<span class="hljs-number">12</span>).toNumber();     <span class="hljs-comment">// → converts to the default target unit: 0.012</span></code></pre>
+
+<p>The .toString(unit=null, numericScale=null) method converts to a String in the requested unit, that includes the unit</p>
+<pre><code class="hljs javascript">Tinu.distance(<span class="hljs-number">12</span>, <span class="hljs-string">"cm"</span>).toString(<span class="hljs-string">"m"</span>);     <span class="hljs-comment">// → "0.012 m"</span>
+Tinu.distance(<span class="hljs-number">12</span>, <span class="hljs-string">"cm"</span>).toString(<span class="hljs-string">"m"</span>, <span class="hljs-number">2</span>);  <span class="hljs-comment">// → "0.01 m"</span>
+Tinu.distance(<span class="hljs-number">12</span>, <span class="hljs-string">"cm"</span>).toString();        <span class="hljs-comment">// → converts to the default target unit: "0.012 m"</span></code></pre>
+
+<p>Please help yourself to add type and other unit if needed !</p>
+
+                </article>
+            </div>
+
+            <footer>
+                Generated using <a href="https://wanadev.github.io/enlightme/">Enlight'me</a> 0.1.1
+            </footer>
+
+        </div>
+
+        <script>
+
+(function() {
+
+    var MENU_UNFOLDED_CLASS = "mobile-menu-unfolded";
+
+    var menuButton = document.getElementById("toggle-mobile-menu");
+    var menuItems = document.querySelectorAll(".content nav a");
+
+    function getAbsolutePosition(element) {
+        if (typeof(element) == "string") {
+            element = document.getElementById(element);
+        }
+        if (!(element instanceof Element)) {
+            return {x: 0, y: 0};
+        }
+
+        var css;
+        var origElement = element;
+
+        try {
+            css = getComputedStyle(element);
+        } catch (e) {
+            return {x: 0, y: 0};
+        }
+
+        if (!css) {
+            return {x: 0, y: 0};
+        }
+
+        var x = -parseInt(css.borderLeftWidth);
+        var y = -parseInt(css.borderTopWidth);
+
+        while (element.offsetParent) {
+            css = getComputedStyle(element);
+
+            x += element.offsetLeft || 0;
+            x += parseInt(css.borderLeftWidth);
+
+            y += element.offsetTop || 0;
+            y += parseInt(css.borderTopWidth);
+
+            element = element.offsetParent;
+        }
+
+        element = origElement;
+
+        while (element.parentNode && !(element instanceof HTMLBodyElement)) {
+            x -= element.scrollLeft || 0;
+            y -= element.scrollTop || 0;
+            element = element.parentNode;
+        }
+
+        return {x: x, y: y};
+    };
+
+    function openMenu() {
+        document.body.classList.add(MENU_UNFOLDED_CLASS);
+    }
+
+    function closeMenu() {
+        document.body.classList.remove(MENU_UNFOLDED_CLASS);
+    }
+
+    function toggleMenu() {
+        document.body.classList.toggle(MENU_UNFOLDED_CLASS);
+    }
+
+    function _onMenuItemClicked(event) {
+        var href = this.getAttribute("href");
+
+        if (href[0] != "#") {
+            return;
+        }
+
+        event.preventDefault();
+
+        var anchor = href.substr(1, href.length-1);
+        var anchorPosition = getAbsolutePosition(anchor);
+        document.scrollingElement.scrollTop = anchorPosition.y - menuButton.offsetHeight;
+
+        closeMenu();
+    }
+
+    menuButton.onclick = toggleMenu;
+    menuItems.forEach(function(item) {
+        item.onclick = _onMenuItemClicked;
+    });
+
+})();
+
+</script>
+
+    </body>
+
+</html>
