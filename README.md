@@ -1,5 +1,7 @@
 # TINU - These Incredibly Naughty Units
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/wanadev/tinu.svg)](https://greenkeeper.io/)
+
 [![NPM version](https://badge.fury.io/js/tinu.png)](http://badge.fury.io/js/tinu)
 [![Build Status](https://travis-ci.org/wanadev/tinu.svg?branch=master)](https://travis-ci.org/wanadev/tinu)
 
